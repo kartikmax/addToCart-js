@@ -6,25 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pokemon</title>
     <link rel="stylesheet" href="index.css" />
+    <script src="app.js" defer></script>
   </head>
   <body>
-    <h1>here is the list</h1>
+    
+      <h1>here is the list</h1>
+      <button class="payment_button">Go to Payment</button>
+    
     <div class="card-container">
-      <!-- cards here  -->
-
       <div class="card">
         <div class="card_image">
           <img src="./public/bulbasaur.jpg" />
         </div>
         <div class="card_content">
-          <h2 class="card_name">Name: Green</h2>
+          <h2 class="card_name">Name: bulbasaur</h2>
           <p class="card_price">Rs 27</p>
           <div class="card_quantity">
             <button class="decrement">-</button>
-            <span>Quantity: <span id="quantity">0</span></span>
+            <span>Quantity: <span class="quantity">0</span></span>
             <button class="increment">+</button>
           </div>
-          <p class="card_subtotal">Subtotal: Rs <span id="subtotal">0</span></p>
+          <p class="card_subtotal">
+            Subtotal: Rs <span class="subtotal">0</span>
+          </p>
           <button class="card_button">Add to Cart</button>
         </div>
       </div>
@@ -34,14 +38,16 @@
           <img src="./public/caterpie.jpg" />
         </div>
         <div class="card_content">
-          <h2 class="card_name">Name :Green</h2>
-          <p class="card_price">Rs</p>
+          <h2 class="card_name">Name :Caterpie</h2>
+          <p class="card_price">Rs 32</p>
           <div class="card_quantity">
-            <button>-</button>
-            <span>Quantity : {quantity}</span>
-            <button>+</button>
+            <button class="decrement">-</button>
+            <span>Quantity: <span class="quantity">0</span></span>
+            <button class="increment">+</button>
           </div>
-          <p class="card_subtotal">Subtotal: Rs Subtotal</p>
+          <p class="card_subtotal">
+            Subtotal: Rs <span class="subtotal">0</span>
+          </p>
           <button class="card_button">Add to Cart</button>
         </div>
       </div>
@@ -51,14 +57,16 @@
           <img src="./public/charmander.jpg" />
         </div>
         <div class="card_content">
-          <h2 class="card_name">Name :Green</h2>
-          <p class="card_price">Rs</p>
+          <h2 class="card_name">Name : Charmender</h2>
+          <p class="card_price">Rs 48</p>
           <div class="card_quantity">
-            <button>-</button>
-            <span>Quantity : {quantity}</span>
-            <button>+</button>
+            <button class="decrement">-</button>
+            <span>Quantity: <span class="quantity">0</span></span>
+            <button class="increment">+</button>
           </div>
-          <p class="card_subtotal">Subtotal: Rs Subtotal</p>
+          <p class="card_subtotal">
+            Subtotal: Rs <span class="subtotal">0</span>
+          </p>
           <button class="card_button">Add to Cart</button>
         </div>
       </div>
@@ -68,73 +76,19 @@
           <img src="./public/ivysaur.jpg" />
         </div>
         <div class="card_content">
-          <h2 class="card_name">Name :Green</h2>
-          <p class="card_price">Rs</p>
+          <h2 class="card_name">Name : ivysaur</h2>
+          <p class="card_price">Rs 22</p>
           <div class="card_quantity">
-            <button>-</button>
-            <span>Quantity : {quantity}</span>
-            <button>+</button>
+            <button class="decrement">-</button>
+            <span>Quantity: <span class="quantity">0</span></span>
+            <button class="increment">+</button>
           </div>
-          <p class="card_subtotal">Subtotal: Rs Subtotal</p>
+          <p class="card_subtotal">
+            Subtotal: Rs <span class="subtotal">0</span>
+          </p>
           <button class="card_button">Add to Cart</button>
         </div>
       </div>
     </div>
-
-    <script>
-      // Global variables to store quantity and subtotal
-      let quantity = 0;
-      let subtotal = 0;
-
-      // Function to increment quantity
-      function incrementQuantity() {
-        quantity++;
-        updateQuantityDisplay();
-      }
-
-      // Function to decrement quantity
-      function decrementQuantity() {
-        if (quantity > 0) {
-          quantity--;
-          updateQuantityDisplay();
-        }
-      }
-
-      // Function to update quantity display
-      function updateQuantityDisplay() {
-        document.getElementById("quantity").textContent = quantity;
-        updateSubtotalDisplay();
-      }
-
-      // Function to update subtotal display
-      function updateSubtotalDisplay() {
-        const price = 27; // Price per item
-        subtotal = quantity * price;
-        document.getElementById("subtotal").textContent = subtotal;
-      }
-
-      // Function to handle "Add to Cart" button click
-      function addToCart() {
-        console.log("Added to cart");
-        const item = {
-          name: "Green",
-          price: 27,
-          quantity: quantity,
-          subtotal: subtotal,
-        };
-        console.log(item);
-      }
-
-      // Attach event listeners using event delegation
-      document.addEventListener("click", function (event) {
-        if (event.target.matches(".increment")) {
-          incrementQuantity();
-        } else if (event.target.matches(".decrement")) {
-          decrementQuantity();
-        } else if (event.target.matches(".card_button")) {
-          addToCart();
-        }
-      });
-    </script>
   </body>
 </html>
