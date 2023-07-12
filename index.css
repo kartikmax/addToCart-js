@@ -1,0 +1,110 @@
+.checkout {
+  background-color: #f0e2e2;
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.checkout h2 {
+  margin-bottom: 10px;
+}
+
+.checkout ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.checkout li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.checkout li button {
+  margin-left: 10px;
+}
+
+.checkout p {
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.card_quantity {
+  display: flex;
+  align-items: center;
+  justify-content: first baseline;
+  margin-bottom: 10px;
+}
+
+.card_quantity button {
+  width: 50px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.card_quantity span {
+  margin: 0 10px;
+  font-size: 16px;
+}
+
+.card_button {
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.card {
+  border-radius: 5px;
+  padding: 19px;
+  background-color: #f7f4f1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  transform: scale(1.008);
+  background-color: #bdd6ce;
+}
+
+.card_image img {
+  height: 200px;
+  width: 200px;
+  mix-blend-mode: multiply;
+}
+
+/* Responsive styles for different screen sizes */
+@media (max-width: 1024px) {
+  .card-container {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* Display cards in two columns for medium screens */
+  }
+}
+
+/* Responsive styles for mobile */
+@media (max-width: 768px) {
+  .card-container {
+    grid-template-columns: repeat(
+      1,
+      1fr
+    ); /* Display cards in a single column */
+  }
+
+  .card {
+    padding: 10px; /* Adjust padding for mobile layout */
+  }
+
+  .card_image img {
+    height: auto; /* Allow image height to adjust based on content */
+    width: 80%; /* Make image width fill the container */
+  }
+}
+/* Rest of the CSS code */
